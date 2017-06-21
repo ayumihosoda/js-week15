@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Week 15 In-class exercise</title>
+	<link rel="stylesheet" type="text/css" href="css/main.css">
+	<!-- #2 Downloaded angularJS 1, include it in the js folder and add it using a script tag. -->
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+</head>
+<!-- #3. Update the body tag so it has an ng-app directive. -->
+<body ng-app="myApp">
+<!-- #9. Create a h1 element so we can add some data using $scope. -->
+<!-- #10. Using an Angular expression, display the text "This is an expression" in an already existing h1. -->
+	<h1 ng-controller="myCtrl">
+		{{name.text}}
+	</h1>
+<!-- #11. Create two inputs tags for the user to give us 2 numbers, and a div to display a calculation we create. -->
+	<input type="number" placeholder="Enter a Number" ng-model="number1" >
+	<input type="number" placeholder="Enter a Number" ng-model="number2" >
+	<div>
+<!-- #12. Set up a two way binding to update the value of an expression in the div. The value of the expression should be the value of the two inputs multiplied together. -->
+		CalculationMultiply: {{number1 * number2}}
+<!-- #13. Add any angular filter to the expression to change how the data is displayed. -->
+		<br>
+		CurrencyConverter: {{number1 * number2 | currency}}
+	</div> 
+<!-- #15. Use the ng-repeat directive to display items from an array in separate HTML elements. -->
+	<ul ng-controller="usersCtrl">
+		<li ng-repeat="users in users">
+			{{ "email: " + users.email + ", password: " + users.password }}
+		</li>
+	</ul>
+
+<!-- #4 Rename the main.js file to app.js and create a folder called controllers inside the JS folder. -->
+<script src="js/app.js"></script>
+<!-- #7 Set up an Angular app module and add a controller to that module. -->
+<script src="js/controllers/myctrl.js"></script>
+
+</body>
+</html>
